@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `LLVMContextDispose` fn in crate `rustc_llvm`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, LLVMContextDispose">
+
+    <title>rustc_llvm::LLVMContextDispose - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+    <link rel="shortcut icon" href="http://www.rust-lang.org/favicon.ico">
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        <a href='../rustc_llvm/index.html'><img src='http://www.rust-lang.org/logos/rust-logo-128x128-blk-v2.png' alt='' width='100'></a>
+        <p class='location'><a href='index.html'>rustc_llvm</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='archive_ro/index.html' title='A wrapper around LLVM&#39;s archive (.a) code'>archive_ro</a><a class='mod ' href='debuginfo/index.html' title=''>debuginfo</a><a class='mod ' href='diagnostic/index.html' title='LLVM diagnostic reports.'>diagnostic</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.AttrBuilder.html' title=''>AttrBuilder</a><a class='struct ' href='struct.Attribute.html' title=''>Attribute</a><a class='struct ' href='struct.ObjectFile.html' title=''>ObjectFile</a><a class='struct ' href='struct.SectionIter.html' title=''>SectionIter</a><a class='struct ' href='struct.TargetData.html' title=''>TargetData</a></div><div class='block enum'><h2>Enums</h2><a class='enum ' href='enum.Archive_opaque.html' title=''>Archive_opaque</a><a class='enum ' href='enum.AsmDialect.html' title=''>AsmDialect</a><a class='enum ' href='enum.AtomicBinOp.html' title=''>AtomicBinOp</a><a class='enum ' href='enum.AtomicOrdering.html' title=''>AtomicOrdering</a><a class='enum ' href='enum.AttributeSet.html' title=''>AttributeSet</a><a class='enum ' href='enum.BasicBlock_opaque.html' title=''>BasicBlock_opaque</a><a class='enum ' href='enum.Builder_opaque.html' title=''>Builder_opaque</a><a class='enum ' href='enum.CallConv.html' title=''>CallConv</a><a class='enum ' href='enum.CodeGenModel.html' title=''>CodeGenModel</a><a class='enum ' href='enum.CodeGenOptLevel.html' title=''>CodeGenOptLevel</a><a class='enum ' href='enum.Context_opaque.html' title=''>Context_opaque</a><a class='enum ' href='enum.DebugLoc_opaque.html' title=''>DebugLoc_opaque</a><a class='enum ' href='enum.DiagnosticInfo_opaque.html' title=''>DiagnosticInfo_opaque</a><a class='enum ' href='enum.DiagnosticKind.html' title=''>DiagnosticKind</a><a class='enum ' href='enum.DiagnosticSeverity.html' title=''>DiagnosticSeverity</a><a class='enum ' href='enum.ExecutionEngine_opaque.html' title=''>ExecutionEngine_opaque</a><a class='enum ' href='enum.FileType.html' title=''>FileType</a><a class='enum ' href='enum.IntPredicate.html' title=''>IntPredicate</a><a class='enum ' href='enum.Linkage.html' title=''>Linkage</a><a class='enum ' href='enum.MemoryBuffer_opaque.html' title=''>MemoryBuffer_opaque</a><a class='enum ' href='enum.MetadataType.html' title=''>MetadataType</a><a class='enum ' href='enum.Metadata_opaque.html' title=''>Metadata_opaque</a><a class='enum ' href='enum.Module_opaque.html' title=''>Module_opaque</a><a class='enum ' href='enum.ObjectFile_opaque.html' title=''>ObjectFile_opaque</a><a class='enum ' href='enum.OtherAttribute.html' title=''>OtherAttribute</a><a class='enum ' href='enum.PassManagerBuilder_opaque.html' title=''>PassManagerBuilder_opaque</a><a class='enum ' href='enum.PassManager_opaque.html' title=''>PassManager_opaque</a><a class='enum ' href='enum.Pass_opaque.html' title=''>Pass_opaque</a><a class='enum ' href='enum.RealPredicate.html' title=''>RealPredicate</a><a class='enum ' href='enum.RelocMode.html' title=''>RelocMode</a><a class='enum ' href='enum.RustJITMemoryManager_opaque.html' title=''>RustJITMemoryManager_opaque</a><a class='enum ' href='enum.RustString_opaque.html' title=''>RustString_opaque</a><a class='enum ' href='enum.SMDiagnostic_opaque.html' title=''>SMDiagnostic_opaque</a><a class='enum ' href='enum.SectionIterator_opaque.html' title=''>SectionIterator_opaque</a><a class='enum ' href='enum.SpecialAttribute.html' title=''>SpecialAttribute</a><a class='enum ' href='enum.TargetData_opaque.html' title=''>TargetData_opaque</a><a class='enum ' href='enum.TargetMachine_opaque.html' title=''>TargetMachine_opaque</a><a class='enum ' href='enum.Twine_opaque.html' title=''>Twine_opaque</a><a class='enum ' href='enum.TypeKind.html' title=''>TypeKind</a><a class='enum ' href='enum.Type_opaque.html' title=''>Type_opaque</a><a class='enum ' href='enum.Use_opaque.html' title=''>Use_opaque</a><a class='enum ' href='enum.Value_opaque.html' title=''>Value_opaque</a><a class='enum ' href='enum.Visibility.html' title=''>Visibility</a></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.AttrHelper.html' title=''>AttrHelper</a></div><div class='block fn'><h2>Functions</h2><a class='fn ' href='fn.ConstFCmp.html' title=''>ConstFCmp</a><a class='fn ' href='fn.ConstICmp.html' title=''>ConstICmp</a><a class='fn ' href='fn.SetFunctionAttribute.html' title=''>SetFunctionAttribute</a><a class='fn ' href='fn.SetFunctionCallConv.html' title=''>SetFunctionCallConv</a><a class='fn ' href='fn.SetInstructionCallConv.html' title=''>SetInstructionCallConv</a><a class='fn ' href='fn.SetLinkage.html' title=''>SetLinkage</a><a class='fn ' href='fn.SetUnnamedAddr.html' title=''>SetUnnamedAddr</a><a class='fn ' href='fn.build_string.html' title=''>build_string</a><a class='fn ' href='fn.debug_loc_to_string.html' title=''>debug_loc_to_string</a><a class='fn ' href='fn.get_param.html' title='Safe wrapper around `LLVMGetParam`, because segfaults are no fun.'>get_param</a><a class='fn ' href='fn.mk_section_iter.html' title=''>mk_section_iter</a><a class='fn ' href='fn.mk_target_data.html' title=''>mk_target_data</a><a class='fn ' href='fn.rust_llvm_string_write_impl.html' title='Appending to a Rust string -- used by raw_rust_string_ostream.'>rust_llvm_string_write_impl</a><a class='fn ' href='fn.set_thread_local.html' title=''>set_thread_local</a><a class='fn ' href='fn.static_link_hack_this_sucks.html' title=''>static_link_hack_this_sucks</a><a class='fn ' href='fn.twine_to_string.html' title=''>twine_to_string</a></div>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content fn">
+<h1 class='fqn'><span class='in-band'><a href='index.html'>rustc_llvm</a>::<wbr><a class='fn' href=''>LLVMContextDispose</a><wbr><a class='stability Unstable' title=''>Unstable</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[-]
+            </a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-4190' href='../src/rustc_llvm/lib.rs.html#568'>[src]</a></span></h1>
+<pre class='rust fn'>pub unsafe fn LLVMContextDispose(C: <a class='type' href='../rustc_llvm/type.ContextRef.html' title='rustc_llvm::ContextRef'>ContextRef</a>)</pre></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "rustc_llvm";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script async src="../search-index.js"></script>
+</body>
+</html>

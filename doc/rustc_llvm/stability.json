@@ -1,0 +1,1 @@
+{"name":"rustc_llvm","counts":{"unstable":874,"stable":46,"unmarked":0},"submodules":[{"name":"archive_ro","counts":{"unstable":5,"stable":1,"unmarked":0},"submodules":[]},{"name":"debuginfo","counts":{"unstable":37,"stable":1,"unmarked":0},"submodules":[]},{"name":"diagnostic","counts":{"unstable":16,"stable":4,"unmarked":0},"submodules":[]}]}

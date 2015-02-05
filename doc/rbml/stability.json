@@ -1,0 +1,1 @@
+{"name":"rbml","counts":{"unstable":98,"stable":7,"unmarked":0},"submodules":[{"name":"io","counts":{"unstable":9,"stable":0,"unmarked":0},"submodules":[]},{"name":"reader","counts":{"unstable":23,"stable":1,"unmarked":0},"submodules":[]},{"name":"writer","counts":{"unstable":24,"stable":0,"unmarked":0},"submodules":[]}]}

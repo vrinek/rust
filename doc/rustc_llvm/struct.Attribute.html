@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Attribute` struct in crate `rustc_llvm`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Attribute">
+
+    <title>rustc_llvm::Attribute - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+    <link rel="shortcut icon" href="http://www.rust-lang.org/favicon.ico">
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        <a href='../rustc_llvm/index.html'><img src='http://www.rust-lang.org/logos/rust-logo-128x128-blk-v2.png' alt='' width='100'></a>
+        <p class='location'><a href='index.html'>rustc_llvm</a></p><div class='block mod'><h2>Modules</h2><a class='mod ' href='archive_ro/index.html' title='A wrapper around LLVM&#39;s archive (.a) code'>archive_ro</a><a class='mod ' href='debuginfo/index.html' title=''>debuginfo</a><a class='mod ' href='diagnostic/index.html' title='LLVM diagnostic reports.'>diagnostic</a></div><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.AttrBuilder.html' title=''>AttrBuilder</a><a class='struct current' href='struct.Attribute.html' title=''>Attribute</a><a class='struct ' href='struct.ObjectFile.html' title=''>ObjectFile</a><a class='struct ' href='struct.SectionIter.html' title=''>SectionIter</a><a class='struct ' href='struct.TargetData.html' title=''>TargetData</a></div><div class='block enum'><h2>Enums</h2><a class='enum ' href='enum.Archive_opaque.html' title=''>Archive_opaque</a><a class='enum ' href='enum.AsmDialect.html' title=''>AsmDialect</a><a class='enum ' href='enum.AtomicBinOp.html' title=''>AtomicBinOp</a><a class='enum ' href='enum.AtomicOrdering.html' title=''>AtomicOrdering</a><a class='enum ' href='enum.AttributeSet.html' title=''>AttributeSet</a><a class='enum ' href='enum.BasicBlock_opaque.html' title=''>BasicBlock_opaque</a><a class='enum ' href='enum.Builder_opaque.html' title=''>Builder_opaque</a><a class='enum ' href='enum.CallConv.html' title=''>CallConv</a><a class='enum ' href='enum.CodeGenModel.html' title=''>CodeGenModel</a><a class='enum ' href='enum.CodeGenOptLevel.html' title=''>CodeGenOptLevel</a><a class='enum ' href='enum.Context_opaque.html' title=''>Context_opaque</a><a class='enum ' href='enum.DebugLoc_opaque.html' title=''>DebugLoc_opaque</a><a class='enum ' href='enum.DiagnosticInfo_opaque.html' title=''>DiagnosticInfo_opaque</a><a class='enum ' href='enum.DiagnosticKind.html' title=''>DiagnosticKind</a><a class='enum ' href='enum.DiagnosticSeverity.html' title=''>DiagnosticSeverity</a><a class='enum ' href='enum.ExecutionEngine_opaque.html' title=''>ExecutionEngine_opaque</a><a class='enum ' href='enum.FileType.html' title=''>FileType</a><a class='enum ' href='enum.IntPredicate.html' title=''>IntPredicate</a><a class='enum ' href='enum.Linkage.html' title=''>Linkage</a><a class='enum ' href='enum.MemoryBuffer_opaque.html' title=''>MemoryBuffer_opaque</a><a class='enum ' href='enum.MetadataType.html' title=''>MetadataType</a><a class='enum ' href='enum.Metadata_opaque.html' title=''>Metadata_opaque</a><a class='enum ' href='enum.Module_opaque.html' title=''>Module_opaque</a><a class='enum ' href='enum.ObjectFile_opaque.html' title=''>ObjectFile_opaque</a><a class='enum ' href='enum.OtherAttribute.html' title=''>OtherAttribute</a><a class='enum ' href='enum.PassManagerBuilder_opaque.html' title=''>PassManagerBuilder_opaque</a><a class='enum ' href='enum.PassManager_opaque.html' title=''>PassManager_opaque</a><a class='enum ' href='enum.Pass_opaque.html' title=''>Pass_opaque</a><a class='enum ' href='enum.RealPredicate.html' title=''>RealPredicate</a><a class='enum ' href='enum.RelocMode.html' title=''>RelocMode</a><a class='enum ' href='enum.RustJITMemoryManager_opaque.html' title=''>RustJITMemoryManager_opaque</a><a class='enum ' href='enum.RustString_opaque.html' title=''>RustString_opaque</a><a class='enum ' href='enum.SMDiagnostic_opaque.html' title=''>SMDiagnostic_opaque</a><a class='enum ' href='enum.SectionIterator_opaque.html' title=''>SectionIterator_opaque</a><a class='enum ' href='enum.SpecialAttribute.html' title=''>SpecialAttribute</a><a class='enum ' href='enum.TargetData_opaque.html' title=''>TargetData_opaque</a><a class='enum ' href='enum.TargetMachine_opaque.html' title=''>TargetMachine_opaque</a><a class='enum ' href='enum.Twine_opaque.html' title=''>Twine_opaque</a><a class='enum ' href='enum.TypeKind.html' title=''>TypeKind</a><a class='enum ' href='enum.Type_opaque.html' title=''>Type_opaque</a><a class='enum ' href='enum.Use_opaque.html' title=''>Use_opaque</a><a class='enum ' href='enum.Value_opaque.html' title=''>Value_opaque</a><a class='enum ' href='enum.Visibility.html' title=''>Visibility</a></div><div class='block trait'><h2>Traits</h2><a class='trait ' href='trait.AttrHelper.html' title=''>AttrHelper</a></div><div class='block fn'><h2>Functions</h2><a class='fn ' href='fn.ConstFCmp.html' title=''>ConstFCmp</a><a class='fn ' href='fn.ConstICmp.html' title=''>ConstICmp</a><a class='fn ' href='fn.SetFunctionAttribute.html' title=''>SetFunctionAttribute</a><a class='fn ' href='fn.SetFunctionCallConv.html' title=''>SetFunctionCallConv</a><a class='fn ' href='fn.SetInstructionCallConv.html' title=''>SetInstructionCallConv</a><a class='fn ' href='fn.SetLinkage.html' title=''>SetLinkage</a><a class='fn ' href='fn.SetUnnamedAddr.html' title=''>SetUnnamedAddr</a><a class='fn ' href='fn.build_string.html' title=''>build_string</a><a class='fn ' href='fn.debug_loc_to_string.html' title=''>debug_loc_to_string</a><a class='fn ' href='fn.get_param.html' title='Safe wrapper around `LLVMGetParam`, because segfaults are no fun.'>get_param</a><a class='fn ' href='fn.mk_section_iter.html' title=''>mk_section_iter</a><a class='fn ' href='fn.mk_target_data.html' title=''>mk_target_data</a><a class='fn ' href='fn.rust_llvm_string_write_impl.html' title='Appending to a Rust string -- used by raw_rust_string_ostream.'>rust_llvm_string_write_impl</a><a class='fn ' href='fn.set_thread_local.html' title=''>set_thread_local</a><a class='fn ' href='fn.static_link_hack_this_sucks.html' title=''>static_link_hack_this_sucks</a><a class='fn ' href='fn.twine_to_string.html' title=''>twine_to_string</a></div>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>rustc_llvm</a>::<wbr><a class='struct' href=''>Attribute</a><wbr><a class='stability Unstable' title=''>Unstable</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[-]
+            </a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-869' href='../src/rustc_llvm/<rustc_bitflags macros>.html#6'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Attribute {
+    // some fields omitted
+}</pre><h2 id='methods'>Methods</h2><h3 class='impl'><a class='stability Unstable' title='Unstable'></a><code>impl <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a></code></h3><div class='impl-items'><h4 id='method.empty' class='method'><a class='stability Unstable' title='Unstable'></a><code>fn <a href='#method.empty' class='fnname'>empty</a>() -&gt; <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a></code></h4>
+<div class='docblock'><p>Returns an empty set of flags.</p>
+</div><h4 id='method.all' class='method'><a class='stability Unstable' title='Unstable'></a><code>fn <a href='#method.all' class='fnname'>all</a>() -&gt; <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a></code></h4>
+<div class='docblock'><p>Returns the set containing all flags.</p>
+</div><h4 id='method.bits' class='method'><a class='stability Unstable' title='Unstable'></a><code>fn <a href='#method.bits' class='fnname'>bits</a>(&amp;self) -&gt; <a href='../std/primitive.u32.html'>u32</a></code></h4>
+<div class='docblock'><p>Returns the raw value of the flags currently stored.</p>
+</div><h4 id='method.from_bits' class='method'><a class='stability Unstable' title='Unstable'></a><code>fn <a href='#method.from_bits' class='fnname'>from_bits</a>(bits: <a href='../std/primitive.u32.html'>u32</a>) -&gt; <a class='enum' href='../core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a>&gt;</code></h4>
+<div class='docblock'><p>Convert from underlying bit representation, unless that
+representation contains bits that do not correspond to a flag.</p>
+</div><h4 id='method.from_bits_truncate' class='method'><a class='stability Unstable' title='Unstable'></a><code>fn <a href='#method.from_bits_truncate' class='fnname'>from_bits_truncate</a>(bits: <a href='../std/primitive.u32.html'>u32</a>) -&gt; <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a></code></h4>
+<div class='docblock'><p>Convert from underlying bit representation, dropping any bits
+that do not correspond to flags.</p>
+</div><h4 id='method.is_empty' class='method'><a class='stability Unstable' title='Unstable'></a><code>fn <a href='#method.is_empty' class='fnname'>is_empty</a>(&amp;self) -&gt; <a href='../std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Returns <code>true</code> if no flags are currently stored.</p>
+</div><h4 id='method.is_all' class='method'><a class='stability Unstable' title='Unstable'></a><code>fn <a href='#method.is_all' class='fnname'>is_all</a>(&amp;self) -&gt; <a href='../std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Returns <code>true</code> if all flags are currently set.</p>
+</div><h4 id='method.intersects' class='method'><a class='stability Unstable' title='Unstable'></a><code>fn <a href='#method.intersects' class='fnname'>intersects</a>(&amp;self, other: <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a>) -&gt; <a href='../std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Returns <code>true</code> if there are flags common to both <code>self</code> and <code>other</code>.</p>
+</div><h4 id='method.contains' class='method'><a class='stability Unstable' title='Unstable'></a><code>fn <a href='#method.contains' class='fnname'>contains</a>(&amp;self, other: <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a>) -&gt; <a href='../std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>Returns <code>true</code> all of the flags in <code>other</code> are contained within <code>self</code>.</p>
+</div><h4 id='method.insert' class='method'><a class='stability Unstable' title='Unstable'></a><code>fn <a href='#method.insert' class='fnname'>insert</a>(&amp;mut self, other: <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a>)</code></h4>
+<div class='docblock'><p>Inserts the specified flags in-place.</p>
+</div><h4 id='method.remove' class='method'><a class='stability Unstable' title='Unstable'></a><code>fn <a href='#method.remove' class='fnname'>remove</a>(&amp;mut self, other: <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a>)</code></h4>
+<div class='docblock'><p>Removes the specified flags in-place.</p>
+</div><h4 id='method.toggle' class='method'><a class='stability Unstable' title='Unstable'></a><code>fn <a href='#method.toggle' class='fnname'>toggle</a>(&amp;mut self, other: <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a>)</code></h4>
+<div class='docblock'><p>Toggles the specified flags in-place.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl <a class='trait' href='../core/ops/trait.BitOr.html' title='core::ops::BitOr'>BitOr</a> for <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a></code></h3><div class='impl-items'><h4 id='assoc_type.Output' class='type'><a class='stability Unmarked' title='No stability level'></a><code>type Output = <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a></code></h4>
+<h4 id='method.bitor' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='#method.bitor' class='fnname'>bitor</a>(self, other: <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a>) -&gt; <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a></code></h4>
+<div class='docblock'><p>Returns the union of the two sets of flags.</p>
+</div></div><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl <a class='trait' href='../core/ops/trait.BitXor.html' title='core::ops::BitXor'>BitXor</a> for <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a></code></h3><div class='impl-items'><h4 id='assoc_type.Output' class='type'><a class='stability Unmarked' title='No stability level'></a><code>type Output = <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a></code></h4>
+<h4 id='method.bitxor' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='#method.bitxor' class='fnname'>bitxor</a>(self, other: <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a>) -&gt; <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a></code></h4>
+<div class='docblock'><p>Returns the left flags, but with all the right flags toggled.</p>
+</div></div><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl <a class='trait' href='../core/ops/trait.BitAnd.html' title='core::ops::BitAnd'>BitAnd</a> for <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a></code></h3><div class='impl-items'><h4 id='assoc_type.Output' class='type'><a class='stability Unmarked' title='No stability level'></a><code>type Output = <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a></code></h4>
+<h4 id='method.bitand' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='#method.bitand' class='fnname'>bitand</a>(self, other: <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a>) -&gt; <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a></code></h4>
+<div class='docblock'><p>Returns the intersection between the two sets of flags.</p>
+</div></div><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl <a class='trait' href='../core/ops/trait.Sub.html' title='core::ops::Sub'>Sub</a> for <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a></code></h3><div class='impl-items'><h4 id='assoc_type.Output' class='type'><a class='stability Unmarked' title='No stability level'></a><code>type Output = <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a></code></h4>
+<h4 id='method.sub' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='#method.sub' class='fnname'>sub</a>(self, other: <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a>) -&gt; <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a></code></h4>
+<div class='docblock'><p>Returns the set difference of the two sets of flags.</p>
+</div></div><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl <a class='trait' href='../core/ops/trait.Not.html' title='core::ops::Not'>Not</a> for <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a></code></h3><div class='impl-items'><h4 id='assoc_type.Output' class='type'><a class='stability Unmarked' title='No stability level'></a><code>type Output = <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a></code></h4>
+<h4 id='method.not' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='#method.not' class='fnname'>not</a>(self) -&gt; <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a></code></h4>
+<div class='docblock'><p>Returns the complement of this set of flags.</p>
+</div></div><h3 class='impl'><a class='stability Unstable' title='Unstable'></a><code>impl <a class='trait' href='../rustc_llvm/trait.AttrHelper.html' title='rustc_llvm::AttrHelper'>AttrHelper</a> for <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a></code></h3><div class='impl-items'><h4 id='method.apply_llfn' class='method'><a class='stability Unstable' title='Unstable'></a><code>fn <a href='#method.apply_llfn' class='fnname'>apply_llfn</a>(&amp;self, idx: <a class='type' href='../libc/types/os/arch/c95/type.c_uint.html' title='libc::types::os::arch::c95::c_uint'>c_uint</a>, llfn: <a class='type' href='../rustc_llvm/type.ValueRef.html' title='rustc_llvm::ValueRef'>ValueRef</a>)</code></h4>
+<h4 id='method.apply_callsite' class='method'><a class='stability Unstable' title='Unstable'></a><code>fn <a href='#method.apply_callsite' class='fnname'>apply_callsite</a>(&amp;self, idx: <a class='type' href='../libc/types/os/arch/c95/type.c_uint.html' title='libc::types::os::arch::c95::c_uint'>c_uint</a>, callsite: <a class='type' href='../rustc_llvm/type.ValueRef.html' title='rustc_llvm::ValueRef'>ValueRef</a>)</code></h4>
+</div><h3 id='derived_implementations'>Derived Implementations </h3><h3 class='impl'><a class='stability Unstable' title='Unstable: module was recently redesigned'></a><code>impl&lt;__S: <a class='trait' href='../core/hash/trait.Writer.html' title='core::hash::Writer'>Writer</a> + <a class='trait' href='../core/hash/trait.Hasher.html' title='core::hash::Hasher'>Hasher</a>&gt; <a class='trait' href='../core/hash/trait.Hash.html' title='core::hash::Hash'>Hash</a>&lt;__S&gt; for <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a></code></h3><div class='impl-items'><h4 id='method.hash' class='method'><a class='stability Unstable' title='Unstable: module was recently redesigned'></a><code>fn <a href='#method.hash' class='fnname'>hash</a>(&amp;self, __arg_0: &amp;mut __S)</code></h4>
+</div><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl <a class='trait' href='../core/cmp/trait.Ord.html' title='core::cmp::Ord'>Ord</a> for <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a></code></h3><div class='impl-items'><h4 id='method.cmp' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='#method.cmp' class='fnname'>cmp</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a>) -&gt; <a class='enum' href='../core/cmp/enum.Ordering.html' title='core::cmp::Ordering'>Ordering</a></code></h4>
+</div><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl <a class='trait' href='../core/cmp/trait.PartialOrd.html' title='core::cmp::PartialOrd'>PartialOrd</a> for <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a></code></h3><div class='impl-items'><h4 id='method.partial_cmp' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='#method.partial_cmp' class='fnname'>partial_cmp</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a>) -&gt; <a class='enum' href='../core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='enum' href='../core/cmp/enum.Ordering.html' title='core::cmp::Ordering'>Ordering</a>&gt;</code></h4>
+<h4 id='method.lt' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='#method.lt' class='fnname'>lt</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a>) -&gt; <a href='../std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.le' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='#method.le' class='fnname'>le</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a>) -&gt; <a href='../std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.gt' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='#method.gt' class='fnname'>gt</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a>) -&gt; <a href='../std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.ge' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='#method.ge' class='fnname'>ge</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a>) -&gt; <a href='../std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl <a class='trait' href='../core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a></code></h3><div class='impl-items'><h4 id='method.clone' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='#method.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a></code></h4>
+<h4 id='method.clone_from' class='tymethod'><a class='stability Unstable' title='Unstable: this function is rarely used'></a><code>fn <a href='#tymethod.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code></h4>
+</div><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl <a class='trait' href='../core/cmp/trait.Eq.html' title='core::cmp::Eq'>Eq</a> for <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a></code></h3><div class='impl-items'><h4 id='method.assert_receiver_is_total_eq' class='tymethod'><a class='stability Unstable' title='Unstable'></a><code>fn <a href='#tymethod.assert_receiver_is_total_eq' class='fnname'>assert_receiver_is_total_eq</a>(&amp;self)</code></h4>
+</div><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl <a class='trait' href='../core/cmp/trait.PartialEq.html' title='core::cmp::PartialEq'>PartialEq</a> for <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a></code></h3><div class='impl-items'><h4 id='method.eq' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='#method.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a>) -&gt; <a href='../std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.ne' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a>) -&gt; <a href='../std/primitive.bool.html'>bool</a></code></h4>
+</div><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl <a class='trait' href='../core/marker/trait.Copy.html' title='core::marker::Copy'>Copy</a> for <a class='struct' href='../rustc_llvm/struct.Attribute.html' title='rustc_llvm::Attribute'>Attribute</a></code></h3><div class='impl-items'></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "rustc_llvm";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script async src="../search-index.js"></script>
+</body>
+</html>
